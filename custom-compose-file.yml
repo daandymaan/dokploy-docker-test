@@ -22,3 +22,4 @@ services:
 networks:
   dokploy-network:
     external: true
+    name: dokploy_network
