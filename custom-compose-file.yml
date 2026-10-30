@@ -12,18 +12,6 @@ services:
     networks:
       - proxy
 
-    labels:
-      - "traefik.enable=true"
-      - "traefik.docker.network=dokploy_network"
-
-      - "traefik.http.routers.basic-nextjs.rule=Host(`your-domain.com`)"
-      - "traefik.http.routers.basic-nextjs.entrypoints=websecure"
-      - "traefik.http.routers.basic-nextjs.tls=true"
-      - "traefik.http.routers.basic-nextjs.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.basic-nextjs.service=basic-nextjs"
-
-      - "traefik.http.services.basic-nextjs.loadbalancer.server.port=3000"
-
 networks:
   proxy:
     external: true
